@@ -48,6 +48,17 @@ split probability gauge, and a per-prediction SHAP breakdown of *why* the model 
 | ![Elo leaderboard](screenshots/elo-leaderboard.png) | ![Recent results feed](screenshots/recent-results.png) |
 | **Elo leaderboard** — every team ranked, with logos and region tags | **Live results feed** — recent matches with scores, tiers, and recency |
 
+<div align="center">
+
+**Per-team pages** — click any team (from the leaderboard or any result) to open its own page.
+
+</div>
+
+|                                         |                                         |
+| :-------------------------------------: | :-------------------------------------: |
+| ![Team page — hero, roster gallery, and profile radar](screenshots/team-page.png) | ![Team recent results with win–loss record](screenshots/team-matches.png) |
+| **Roster + team shape** — Elo, league rank, real player photos, roles, flags, and a normalized profile radar | **Track record** — that team's recent results with a live win–loss tally |
+
 <details>
 <summary>🎬 The landing hero</summary>
 
@@ -332,7 +343,7 @@ canvas-confetti · sonner · Lenis · Radix UI · lucide-react
 - [x] Deploy — [API on Render](https://frag-forecast-api.onrender.com) + [dashboard on Vercel](https://frag-forecast.vercel.app)
 - [ ] Beat Elo on **log-loss** (opponent-adjusted form, Elo+model ensemble)
 - [ ] Backtest vs bookmaker odds (simulated ROI)
-- [ ] Per-team pages + roster galleries
+- [x] Per-team pages + roster galleries
 
 ---
 
