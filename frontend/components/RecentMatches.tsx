@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import type { Match } from "@/lib/types";
 import { TeamLogo } from "@/components/ui/TeamLogo";
 import { cn, tierClasses, timeAgo } from "@/lib/utils";
@@ -31,15 +32,16 @@ export function RecentMatches({
             className="glass-soft flex items-center gap-3 px-3.5 py-2.5"
           >
             <div className="grid flex-1 grid-cols-[1fr_auto_1fr] items-center gap-2">
-              <span
+              <Link
+                href={`/teams/${encodeURIComponent(m.team_a)}`}
                 className={cn(
-                  "flex min-w-0 items-center justify-end gap-1.5 text-sm font-medium",
+                  "flex min-w-0 items-center justify-end gap-1.5 text-sm font-medium transition hover:text-white hover:underline",
                   aWon ? "text-white" : "text-slate-500"
                 )}
               >
                 <span className="truncate">{m.team_a}</span>
                 <TeamLogo name={m.team_a} logoUrl={teamLogos[m.team_a]} size={18} />
-              </span>
+              </Link>
               <span className="flex items-center gap-1.5 rounded-lg bg-black/40 px-2.5 py-1 font-mono text-sm">
                 <span className={aWon ? "font-bold text-teamA" : "text-slate-500"}>
                   {m.score_a}
@@ -49,15 +51,16 @@ export function RecentMatches({
                   {m.score_b}
                 </span>
               </span>
-              <span
+              <Link
+                href={`/teams/${encodeURIComponent(m.team_b)}`}
                 className={cn(
-                  "flex min-w-0 items-center gap-1.5 text-sm font-medium",
+                  "flex min-w-0 items-center gap-1.5 text-sm font-medium transition hover:text-white hover:underline",
                   !aWon ? "text-white" : "text-slate-500"
                 )}
               >
                 <TeamLogo name={m.team_b} logoUrl={teamLogos[m.team_b]} size={18} />
                 <span className="truncate">{m.team_b}</span>
-              </span>
+              </Link>
             </div>
 
             <div className="flex shrink-0 items-center gap-2">

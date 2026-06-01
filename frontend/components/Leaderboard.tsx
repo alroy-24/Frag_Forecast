@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 import type { Team } from "@/lib/types";
 import { AnimatedNumber } from "@/components/ui/AnimatedNumber";
 import { TeamLogo } from "@/components/ui/TeamLogo";
@@ -39,6 +41,11 @@ export function Leaderboard({ teams, limit = 12 }: { teams: Team[]; limit?: numb
             transition={{ duration: 0.4, delay: i * 0.04 }}
             className="group relative flex items-center gap-3 rounded-xl px-2 py-2 hover:bg-white/[0.03]"
           >
+            <Link
+              href={`/teams/${encodeURIComponent(t.name)}`}
+              className="flex flex-1 items-center gap-3"
+              aria-label={`View ${t.name}`}
+            >
             <span
               className={cn(
                 "w-6 text-center font-mono text-sm",
@@ -81,6 +88,8 @@ export function Leaderboard({ teams, limit = 12 }: { teams: Team[]; limit?: numb
                 />
               </div>
             </div>
+            <ChevronRight className="h-4 w-4 shrink-0 text-slate-600 opacity-0 transition group-hover:translate-x-0.5 group-hover:opacity-100" />
+            </Link>
           </motion.li>
         );
       })}
