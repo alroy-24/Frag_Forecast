@@ -40,11 +40,11 @@ export function Header({ health }: { health: Health | null }) {
             ok={online && modelReady}
           />
           <a
-            href="https://github.com"
+            href="https://github.com/alroy-24/Frag_Forecast"
             target="_blank"
             rel="noreferrer"
             className="hidden rounded-lg border border-white/10 p-2 text-slate-400 transition hover:text-white sm:block"
-            aria-label="GitHub"
+            aria-label="View source on GitHub"
           >
             <Github className="h-4 w-4" />
           </a>
